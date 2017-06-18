@@ -1,18 +1,15 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
-    
   end
 
   def show
      @topic = Topic.find(params[:id])
      @bookmarks = @topic.bookmarks
-    
   end
 
   def new
     @topic = Topic.new
-    
   end
   
   def create
@@ -26,13 +23,11 @@ class TopicsController < ApplicationController
        render :new
      end
   end
-  
 
   def edit
      @topic = Topic.find(params[:id])
      @topic.save!
   end
-  
   
   def update
      @topic = Topic.find(params[:id])
@@ -44,11 +39,9 @@ class TopicsController < ApplicationController
        render :edit
      end
   end
-  
-  
+
   def destroy
      @topic = Topic.find(params[:id])
- 
      if @topic.destroy
        flash[:notice] = "\"#{@topic.title}\" was deleted successfully."
        redirect_to topics_path
@@ -57,7 +50,5 @@ class TopicsController < ApplicationController
        render :show
      end
   end
-  
-  
-  
+
 end
