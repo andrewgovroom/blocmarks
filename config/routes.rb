@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   resources :users
+  
+  post :incoming, to: 'incoming#create'
 
 end
