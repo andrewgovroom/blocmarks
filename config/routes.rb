@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
   
-  resources :users
+  resources :users, only: [:new, :index, :show]
   
   post :incoming, to: 'incoming#create'
 
