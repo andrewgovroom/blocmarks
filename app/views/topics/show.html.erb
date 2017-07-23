@@ -13,6 +13,8 @@
           <h4 class="media-heading">
             <%= link_to bookmark.url, bookmark.url, :target => '_blank' %>  <%= link_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark), class: 'btn btn-success' %> 
             <%= link_to "Delete Bookmark", bookmark.topic, method: :delete, class: 'btn btn-danger' %>
+            <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+             
           </h4>
         </div>
       </div>
