@@ -8,3 +8,5 @@ class CreateBookmarks < ActiveRecord::Migration
     end
   end
 end
+
+

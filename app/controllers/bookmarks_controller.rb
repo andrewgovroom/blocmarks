@@ -15,6 +15,7 @@ class BookmarksController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @bookmark = @topic.bookmarks.build(bookmark_params)
     @topic.user = current_user
+    @bookmark.user_id = current_user.id
     authorize @bookmark
     
      if @bookmark.save
